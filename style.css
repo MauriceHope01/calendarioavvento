@@ -1,0 +1,110 @@
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    background-color: rgb(75, 1, 1);
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3em;
+    margin-top: 20px;
+    color: white;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.day {
+    background-color: #0f4900f8;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 20px;
+    width: 100px; 
+    height: 100px; 
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.day:hover {
+    transform: scale(1.1);
+    background-color: #d62828;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.close {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+    color: #d62828;
+}
+
+.close:hover {
+    color: black;
+}
+
+.calendar-container {    
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    height: 100vh; 
+    background-image: url("img/6492483.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Media query per schermi più piccoli */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em; /* Riduce la dimensione del titolo */
+    }
+
+    .calendar {
+        grid-template-columns: repeat(3, 1fr); /* 3 colonne invece di 6 */
+        gap: 5px; /* Riduce lo spazio tra le caselle */
+    }
+
+    .day {
+        width: 80px; /* Caselle più piccole */
+        height: 80px; /* Caselle più piccole */
+        font-size: 16px; /* Riduce il font delle caselle */
+    }
+
+    .modal-content {
+        width: 90%; /* Rende il modal più adatto agli schermi piccoli */
+    }
+}
